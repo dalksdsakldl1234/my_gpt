@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>ChatGPT 대화</h1>
+<form method="POST">
+    <input type="text" name="message" placeholder="메시지를 입력하세요" required>
+    <button type="submit">전송</button>
+</form>
+<div class="chat-history">
+    {% if chat_history and chat_history[-1].role == 'ai' %}
+        <p>
+            <strong>AI:</strong> {{ chat_history[-1].content }}
+        </p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ChatGPT 대화{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>ChatGPT</h2>
+            <ul>
+                <li><a href="{{ url_for('index') }}">ChatGPT</a></li>
+                <li><a href="{{ url_for('history') }}">대화 기록</a></li>
+
+                <!-- 추가 메뉴 항목들 -->
+            </ul>
+        </div>
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</body>
+</html>

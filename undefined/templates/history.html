@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}대화 기록{% endblock %}
+
+{% block content %}
+<h1>대화 기록</h1>
+<div class="chat-history">
+    {% for chat in chat_history %}
+        <p><strong>{{ chat.role }}:</strong> {{ chat.content }}</p>
+    {% endfor %}
+</div>
+{% endblock %}
